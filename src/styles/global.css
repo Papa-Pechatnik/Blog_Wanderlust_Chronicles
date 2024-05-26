@@ -1,0 +1,76 @@
+@import url("./my-normalize.css");
+@import url("./fonts.css");
+
+:root {
+  --color-White: #ffffff; /* --bcgr-bcgr-100          --txt-txt-white-100*/
+
+  --color-DarkBlue: #183b56; /* --txt-txt-blue-head-100 */
+  --color-Blue: #1565d8; /* --txt-btn-blue-100         --btn-btn*/
+  --bcgr-btn-20: #00000033; 
+  --color-SteelBlue: #3684BF;
+
+  --bcgr-icon-100: #959ead;
+  --txt-menu-txt: #959ead;
+
+  --bcgr-stroke-100: #e5eaf4;
+  --bcgr-btn-20: rgba(0, 0, 0, 0.2);
+  --bcgr-footer: #0d2436;
+
+  --txt-txt-body-100: #5a7184;
+
+
+  --txt-btn-green-100: #36b37e;
+
+  --btn-layer-15: rgba(54, 179, 126, 0.15);
+
+  --font-family: "Open Sans", Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+  --font-Playfair: "Playfair Display SC", "Times New Roman", "Times CY", "Nimbus Roman No9 L", serif;;
+  --width: 1440px;
+}
+body {
+  font-family: var(--font-family);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* button */
+.btn {
+  --btn-padding: 1.5rem;
+  padding: calc(var(--btn-padding) / 2) var(--btn-padding);
+  text-wrap: nowrap;
+}
+
+.btn::first-letter {
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: var(--width);
+  padding: 0 clamp(1.25rem, -8.0356rem + 19.345vw, 9.375rem);
+}
+
+/*-- flex --*/
+.flexCSB {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flexColCC {
+  display: flex;
+  align-items: center;
+
+}

@@ -1,0 +1,278 @@
+---
+import { Image } from "astro:assets";
+import LogoHeader from "./LogoHeader.astro";
+import headerBackground from "./headerBackground.jpg";
+---
+
+<header class="bg-header">
+  <div class="container">
+    <div class="header-box">
+      <section class="header flexCSB">
+        <LogoHeader />
+        <nav class="nav flexCSB">
+          <ul class="nav-menu flexCSB">
+            <li class="nav-item">
+              <a class="nav-item_link nav-item_activ" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <div class="nav-item__element">
+                <p>Routs</p>
+                <p>V</p>
+                <ul style="display: none;">
+                  <li><a href="">Routs1</a></li>
+                  <li><a href="">Routs2</a></li>
+                  <li><a href="">Routs3</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-item__element">
+                <p>Articles</p>
+                <p>V</p>
+                <ul style="display: none;">
+                  <li><a href="">Articles1</a></li>
+                  <li><a href="">Articles2</a></li>
+                  <li><a href="">Articles3</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item_link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-item_link" href="#">Contacts</a>
+            </li>
+          </ul>
+          <button class="btn btn-transp-blue">Get it now</button>
+        </nav>
+      </section>
+      <section class="header-titel">
+        <h1>Wanderlust Chronicles</h1>
+        <div class="search-box">
+          <form id="search-form" class="search-form">
+            <input type="text" />
+          </form>
+          <div class="popular-tags">
+            <p class="tags-titel">Popular tags :</p>
+            <ul class="tags-list">
+              <li class="tag-item">Carpathians</li>
+              <li class="tag-item">Dnieper embankment</li>
+              <li class="tag-item">lviv</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</header>
+
+<style>
+  h1 {
+    font-family: var(--font-Playfair);
+    font-weight: 700;
+    font-size: clamp(2.5rem, 1.11544rem + 3.846vw, 4rem); /*1140-64px 576-40px */
+    line-height: 94%;
+    letter-spacing: 0em;
+    text-align: center;
+    color: var(--color-White);
+    text-transform: capitalize;
+    margin: 0;
+  }
+
+  header {
+    position: relative;
+    width: 100%;
+    height: 742px;
+  }
+
+  .bg-header {
+    background-image: url("./headerBackground.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .header {
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+
+  .header-box {
+    max-width: inherit;
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-titel {
+    max-width: max-content;
+  }
+  .search-box {
+    padding-right: 52px;
+    padding-left: 52px;
+    margin-top: 40px;
+    border: 2px solid red;
+  }
+
+  .search-form {
+    width: 100%;
+    border-radius: 8px;
+    padding: 10px 24px;
+    height: 56px;
+    box-shadow: 0 20px 50px 0 rgba(15, 24, 44, 0.15);
+    background: var(--color-White);
+  }
+
+  .popular-tags {
+    --step: 2.25rem;
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 19px var(--step);
+    font-family: var(--font-family);
+    color: var(--color-White);
+    text-transform: capitalize;
+    text-wrap: nowrap;
+    margin-top: clamp(1rem, -0.87488rem + 5.208vw, 1.625rem); /*768-26px 576-16px */
+  }
+
+  .tags-titel {
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .tags-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--step) 1.1875rem;
+  }
+
+  .tag-item {
+    width: max-content;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 143%;
+    text-align: center;
+
+    padding: 0.375rem 1rem;
+    backdrop-filter: blur(20px);
+    background: var(--bcgr-btn-20);
+    border: 1px solid var(--color-White);
+    border-radius: 0.5rem;
+  }
+
+  .nav {
+    column-gap: clamp(40px, 8cqw, 80px);
+  }
+
+  .nav-menu {
+    column-gap: clamp(24px, 4cqw, 40px);
+    margin-left: 24px;
+  }
+
+  .nav-item,
+  .nav-item_link {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--color-DarkBlue);
+    transition: color 1s;
+  }
+
+  .nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-item_link:hover,
+  .nav-item:hover {
+    cursor: pointer;
+    color: var(--color-SteelBlue);
+    transition: color 0.5s;
+  }
+  .nav-item_activ {
+    position: relative;
+  }
+
+  .nav-item_activ:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-DarkBlue);
+  }
+
+  .nav-item:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-DarkBlue);
+    transition: width 0.5s;
+  }
+
+  .nav-item:hover:after {
+    content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px;
+    background-color: var(--color-SteelBlue);
+    transition: width 0.5s;
+  }
+
+  .nav-item__element {
+    display: flex;
+    align-items: center;
+  }
+
+  .btn-transp-blue {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--color-DarkBlue);
+    outline: 1px solid var(--color-DarkBlue);
+    border: none;
+    border-radius: 0.5rem;
+    background: none;
+  }
+  .btn-transp-blue:hover {
+    cursor: pointer;
+    color: var(--color-Blue);
+    outline: 1px solid var(--color-Blue);
+    transition: color 0.5s;
+  }
+
+  @media screen and (max-width: 767.98px) {
+    .nav-menu {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 575.98px) {
+    h1 {
+      line-height: 150%;
+      letter-spacing: 0.01em;
+    }
+
+    .tags-list {
+      flex-direction: column;
+      align-items: start;
+    }
+
+  }
+</style>
